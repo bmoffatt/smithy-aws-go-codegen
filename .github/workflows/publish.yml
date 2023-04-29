@@ -17,9 +17,10 @@ jobs:
           distribution: 'adopt'
 
       - name: Setup dependencies
-        run: >
-          make smithy-go-publish-local
-          patch -u /tmp/smithy-go-localcodegen/build.gradle.kts -i smithy-go-publish-github.patch
+        run: make smithy-go-publish-local
+      
+      - name: Patch local smithy-go
+        run: patch -u /tmp/smithy-go-localcodegen/build.gradle.kts -i smithy-go-publish-github.patch
 
       - name: Publish smithy-go-codegen
         env:
