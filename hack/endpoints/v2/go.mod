@@ -1,4 +1,4 @@
-module github.com/bmoffatt/smithy-aws-go-codgen/hack/endpoints/v2
+module github.com/bmoffatt/smithy-aws-go-codegen/hack/endpoints/v2
 
 go 1.15
 
