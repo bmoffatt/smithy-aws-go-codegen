@@ -23,6 +23,7 @@ import software.amazon.smithy.go.codegen.SmithyGoDependency;
  */
 public class AwsGoDependency {
     public static final String AWS_SOURCE_PATH = "github.com/aws/aws-sdk-go-v2";
+    public static final String BMOFFATT_SOURCE_PATH = "github.com/bmoffatt/smithy-aws-go-codegen";
 
     public static final GoDependency AWS_REST_JSON_PROTOCOL = aws("aws/protocol/restjson");
     public static final GoDependency AWS_QUERY_PROTOCOL = aws("aws/protocol/query");
@@ -39,10 +40,10 @@ public class AwsGoDependency {
     public static final GoDependency SERVICE_INTERNAL_EVENTSTREAMAPI = awsModuleDep("aws/protocol/eventstream",
             "eventstreamapi", Versions.AWS_PROTOCOL_EVENTSTREAM, "eventstreamapi");
 
-    public static final GoDependency INTERNAL_ENDPOINTS_V2 = awsModuleDep("internal/endpoints/v2", null,
+    public static final GoDependency INTERNAL_ENDPOINTS_V2 = bmoffattModuleDep("hack/endpoints/v2", null,
             Versions.INTERNAL_ENDPOINTS_V2, "endpoints");
     public static final GoDependency S3_SHARED_CONFIG = aws("service/internal/s3shared/config", "s3sharedconfig");
-    public static final GoDependency SERVICE_INTERNAL_CONFIG = awsModuleDep("internal/configsources",
+    public static final GoDependency SERVICE_INTERNAL_CONFIG = bmoffattModuleDep("hack/configsources",
             null, Versions.SERVICE_INTERNAL_CONFIG, "internalConfig");
     public static final GoDependency SERVICE_INTERNAL_ENDPOINT_DISCOVERY = awsModuleDep("service/internal/endpoint-discovery",
             null, Versions.SERVICE_INTERNAL_ENDPOINT_DISCOVERY, "internalEndpointDiscovery");
@@ -81,6 +82,24 @@ public class AwsGoDependency {
             String alias
     ) {
         moduleImportPath = AWS_SOURCE_PATH + "/" + moduleImportPath;
+        return module(moduleImportPath, relativePath, version, alias);
+    }
+    /**
+     * bmoffattModuleDep returns a GoDependency relative to the version of his forked AWSK_SDK core.
+     *
+     * @param moduleImportPath the module path within aws sdk to be added as go mod dependency.
+     * @param relativePath     the relative path which will be used as import path relative to aws sdk path.
+     * @param version          the version of the aws module dependency to be imported
+     * @param alias            the go import alias.
+     * @return GoDependency
+     */
+    protected static GoDependency bmoffattModuleDep(
+            String moduleImportPath,
+            String relativePath,
+            String version,
+            String alias
+    ) {
+        moduleImportPath = BMOFFATT_SOURCE_PATH + "/" + moduleImportPath;
         return module(moduleImportPath, relativePath, version, alias);
     }
 

@@ -16,8 +16,30 @@
 val smithyVersion: String by project
 
 plugins {
+    `maven-publish`
     `java-library`
     jacoco
+}
+
+publishing {
+    publications {
+        create<MavenPublication>("maven") {
+            groupId = "com.bryanmoffatt"
+            artifactId = "smithy-aws-go"
+            version = "0.0.1"
+            from(components["java"])
+        }
+    }
+    repositories {
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/bmoffatt/smithy-aws-go-codegen")
+            credentials {
+                username = System.getenv("GITHUB_ACTOR")
+                password = System.getenv("GITHUB_TOKEN")
+            }
+        }
+    }
 }
 
 group = "software.amazon.smithy.go"

@@ -1,4 +1,4 @@
-module github.com/aws/aws-sdk-go-v2/internal/configsources
+module github.com/bmoffatt/smithy-aws-go-codegen/hack/configsources
 
 go 1.15
 
