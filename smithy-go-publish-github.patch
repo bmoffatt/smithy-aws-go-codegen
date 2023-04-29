@@ -1,0 +1,20 @@
+diff --git a/codegen/build.gradle.kts b/codegen/build.gradle.kts
+index ab3afcd..b405a3f 100644
+--- a/codegen/build.gradle.kts
++++ b/codegen/build.gradle.kts
+@@ -139,11 +139,11 @@ subprojects {
+ 
+         publishing {
+             repositories {
+-                mavenCentral {
+-                    url = uri("https://aws.oss.sonatype.org/service/local/staging/deploy/maven2/")
++                maven {
++                    url = uri("https://maven.pkg.github.com/bmoffatt/smithy-aws-go-codegen")
+                     credentials {
+-                        username = sonatypeUser
+-                        password = sonatypePassword
++                        username = System.getenv("GITHUB_ACTOR")
++                        password = System.getenv("GITHUB_TOKEN")
+                     }
+                 }
+             }
