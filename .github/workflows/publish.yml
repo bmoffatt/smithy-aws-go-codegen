@@ -15,6 +15,10 @@ jobs:
         with:
           java-version: '11'
           distribution: 'adopt'
+
+      - name: Setup dependencies
+        run: make smithy-go-publish-local
+
       - name: Publish package
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
