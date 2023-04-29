@@ -20,7 +20,7 @@ jobs:
         run: make smithy-go-publish-local
       
       - name: Patch local smithy-go
-        run: patch -u /tmp/smithy-go-localcodegen/build.gradle.kts -i smithy-go-publish-github.patch
+        run: patch -u /tmp/smithy-go-local/codegen/build.gradle.kts -i smithy-go-publish-github.patch
 
       - name: Publish smithy-go-codegen
         env:
