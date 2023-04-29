@@ -18,5 +18,4 @@ jobs:
       - name: Publish package
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run:
-          - (cd codegen/smithy-aws-go-codegen && ../gradlew publish)
+        run: (cd codegen/smithy-aws-go-codegen && ../gradlew publish)
