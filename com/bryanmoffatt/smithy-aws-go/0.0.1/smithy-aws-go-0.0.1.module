@@ -1,0 +1,134 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "com.bryanmoffatt",
+    "module": "smithy-aws-go",
+    "version": "0.0.1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.2"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 17,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "software.amazon.smithy",
+          "module": "smithy-aws-traits",
+          "version": {
+            "requires": "1.27.2"
+          }
+        },
+        {
+          "group": "software.amazon.smithy",
+          "module": "smithy-aws-iam-traits",
+          "version": {
+            "requires": "1.27.2"
+          }
+        },
+        {
+          "group": "software.amazon.smithy",
+          "module": "smithy-aws-cloudformation-traits",
+          "version": {
+            "requires": "1.27.2"
+          }
+        },
+        {
+          "group": "software.amazon.smithy",
+          "module": "smithy-diff",
+          "version": {
+            "requires": "1.27.2"
+          }
+        },
+        {
+          "group": "software.amazon.smithy.go",
+          "module": "smithy-go-codegen",
+          "version": {
+            "requires": "0.1.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "smithy-aws-go-0.0.1.jar",
+          "url": "smithy-aws-go-0.0.1.jar",
+          "size": 439192,
+          "sha512": "c656872c169ff2342525c0a1ef8ec4dbc5632bed8021a6deda528a7b2a9747d8d14c100f9ff9a1300d70493158760c352c0d9b48d81978542ab570de66847ad0",
+          "sha256": "5e2a8d9999e29203315e2a4086fc7728307c460ceb222f867ce00dbc8053dda6",
+          "sha1": "920434efda6f3a586b00c12e3a60315851903e0a",
+          "md5": "d8b6096305f48aa7101e8357bdad0dbd"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 17,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "software.amazon.smithy",
+          "module": "smithy-aws-traits",
+          "version": {
+            "requires": "1.27.2"
+          }
+        },
+        {
+          "group": "software.amazon.smithy",
+          "module": "smithy-aws-iam-traits",
+          "version": {
+            "requires": "1.27.2"
+          }
+        },
+        {
+          "group": "software.amazon.smithy",
+          "module": "smithy-aws-cloudformation-traits",
+          "version": {
+            "requires": "1.27.2"
+          }
+        },
+        {
+          "group": "software.amazon.smithy",
+          "module": "smithy-diff",
+          "version": {
+            "requires": "1.27.2"
+          }
+        },
+        {
+          "group": "software.amazon.smithy.go",
+          "module": "smithy-go-codegen",
+          "version": {
+            "requires": "0.1.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "smithy-aws-go-0.0.1.jar",
+          "url": "smithy-aws-go-0.0.1.jar",
+          "size": 439192,
+          "sha512": "c656872c169ff2342525c0a1ef8ec4dbc5632bed8021a6deda528a7b2a9747d8d14c100f9ff9a1300d70493158760c352c0d9b48d81978542ab570de66847ad0",
+          "sha256": "5e2a8d9999e29203315e2a4086fc7728307c460ceb222f867ce00dbc8053dda6",
+          "sha1": "920434efda6f3a586b00c12e3a60315851903e0a",
+          "md5": "d8b6096305f48aa7101e8357bdad0dbd"
+        }
+      ]
+    }
+  ]
+}
